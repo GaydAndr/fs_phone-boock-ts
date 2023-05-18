@@ -1,26 +1,74 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from '@components/Layout';
+import { PrivateRoute } from '@components/PrivetRoute/PrivateRoute';
+import { PublicRoute } from '@components/PublicRoute/PublicRoute';
+import { AuthPage } from '@pages/Auth';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            path="/auth"
+            element={
+              <PublicRoute>
+                {/* <div>Public</div> */}
+                <AuthPage />
+                {/* <LoginPage /> */}
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <div>Private</div>
+                {/* <Home/> */}
+              </PrivateRoute>
+            }
+          />
+          {/* <Route path="*" element={<Page404 />} /> */}
+        </Route>
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
+
+// import { Home } from '../pages/Home/Home';
+// import { LoginPage } from '../pages/LoginPage/LoginPage';
+// import { Page404 } from '../pages/Page404/Page404';
+// import { Layout } from './Layout/Layuot';
+// import { PrivateRoute } from './PrivetRoute/PrivateRoute';
+// import { PublicRoute } from './PublicRoute/PublicRoute';
+
+// export const App = () => {
+//   return (
+//     <>
+//       <Routes>
+//         <Route path="/" element={<Layout />}>
+//           <Route
+//             path="/auth"
+//             element={
+//               <PublicRoute>
+//                 <LoginPage />
+//               </PublicRoute>
+//             }
+//           />
+//           <Route
+//             path="/auth"
+//             element={
+//               <PrivateRoute>
+//                 <Home />
+//               </PrivateRoute>
+//             }
+//           />
+//           <Route path="*" element={<Page404 />} />
+//         </Route>
+//       </Routes>
+//     </>
+//   );
+// };

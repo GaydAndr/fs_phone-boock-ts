@@ -1,0 +1,15 @@
+.header {
+  height: 60px;
+  /* background: rgba(124, 124, 124, 0.301); */
+  /* background: #5d4e71; */
+  background: var(--green-bg-golor);
+  box-shadow: inset 0px -1px 0px 0px var(--main-color);
+}
+
+.container {
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,22 @@
+.logoContent {
+  display: inline-flex;
+}
+
+.logoSVG {
+  height: 60px;
+  width: 60px;
+}
+
+.logoTXT {
+  position: relative;
+  left: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Rubik Mono One', sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  color: #5d4e71;
+}

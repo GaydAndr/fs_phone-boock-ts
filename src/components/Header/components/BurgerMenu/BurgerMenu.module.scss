@@ -1,0 +1,58 @@
+.burger {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  color: var(--main-color);
+
+  &__icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+    transition: color var(--transition), transform var(--transition), overflow var(--transition);
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  &__open {
+    composes: burger__icon;
+    opacity: 1;
+    overflow: visible;
+    transform: scaleX(1);
+  }
+
+  .active &__open {
+    opacity: 0;
+    overflow: hidden;
+    transform: scaleX(0);
+  }
+
+  &__close {
+    composes: burger__icon;
+    opacity: 0;
+    overflow: hidden;
+    transform: rotateZ(120deg) scale(0);
+  }
+
+  .active &__close {
+    opacity: 1;
+    overflow: visible;
+    transform: rotateZ(0deg) scale(1);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
