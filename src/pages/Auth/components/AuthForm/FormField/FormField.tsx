@@ -1,8 +1,12 @@
-import styles from './FormField.module.css';
-import { ErrorMessage, useField } from 'formik';
+import styles from './FormField.module.scss';
+import { ErrorMessage, FieldProps, useField } from 'formik';
 
-export const FormField = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
+interface Props extends FieldProps {
+  label: string;
+}
+
+export const FormField: React.FC<Props> = ({ label, ...props }) => {
+  const [field, meta, helpers] = useField(props);
 
   return (
     <div className="mb-2">

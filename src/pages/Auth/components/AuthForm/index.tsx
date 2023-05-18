@@ -1,4 +1,4 @@
-import styles from './AuthForm.module.css';
+import styles from './AuthForm.module.scss';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
