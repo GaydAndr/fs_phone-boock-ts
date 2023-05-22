@@ -1,12 +1,12 @@
+import { FormFieldProps } from '@pages/Auth/Utilse';
 import styles from './FormField.module.scss';
-import { ErrorMessage, FieldProps, useField } from 'formik';
+import { ErrorMessage, useField } from 'formik';
 
-interface Props extends FieldProps {
-  label: string;
-}
-
-export const FormField: React.FC<Props> = ({ label, ...props }) => {
-  const [field, meta, helpers] = useField(props);
+export const FormField: React.FC<
+  { label: string } & React.InputHTMLAttributes<HTMLInputElement> &
+    FormFieldProps
+> = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
 
   return (
     <div className="mb-2">
