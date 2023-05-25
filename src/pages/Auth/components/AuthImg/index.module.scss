@@ -1,0 +1,14 @@
+.wrapper {
+  width: 600px;
+  height: 600px;
+  // background-color: #efd8ac;
+  background-repeat: no-repeat;
+  background-size: 400px auto;
+
+  &.login {
+    background-image: url(../../../../assets/images/bgImg/login-bg.png);
+  }
+  &.signUp {
+    background-image: url(../../../../assets/images/bgImg/signup-bg.png);
+  }
+}
